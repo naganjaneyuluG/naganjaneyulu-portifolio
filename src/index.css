@@ -6,68 +6,68 @@
 @layer base {
   :root {
     /* Light theme colors */
-    --background: 247 249 251; /* #F7F9FB */
-    --foreground: 10 25 47; /* #0A192F */
-    --primary: 0 123 143; /* #007B8F */
-    --primary-foreground: 247 249 251;
-    --secondary: 224 228 231; /* #E0E4E7 */
-    --secondary-foreground: 10 25 47;
-    --muted: 224 228 231;
-    --muted-foreground: 95 108 123; /* #5F6C7B */
-    --accent: 224 228 231;
-    --accent-foreground: 10 25 47;
+    --background: 255 255 255; /* #ffffff */
+    --foreground: 0 0 0; /* #000000 */
+    --primary: 252 163 17; /* #fca311 */
+    --primary-foreground: 255 255 255;
+    --secondary: 229 229 229; /* #e5e5e5 */
+    --secondary-foreground: 0 0 0;
+    --muted: 229 229 229;
+    --muted-foreground: 20 33 61; /* #14213d */
+    --accent: 229 229 229;
+    --accent-foreground: 0 0 0;
     --card: 255 255 255;
-    --card-foreground: 10 25 47;
-    --border: 224 228 231;
-    --input: 224 228 231;
-    --ring: 0 123 143;
+    --card-foreground: 0 0 0;
+    --border: 229 229 229;
+    --input: 229 229 229;
+    --ring: 252 163 17;
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
     --popover: 255 255 255;
-    --popover-foreground: 10 25 47;
+    --popover-foreground: 0 0 0;
     
     /* Custom theme variables */
-    --theme-bg: 247 249 251; /* #F7F9FB */
-    --theme-accent: 0 123 143; /* #007B8F */
-    --theme-text-main: 10 25 47; /* #0A192F */
-    --theme-text-secondary: 95 108 123; /* #5F6C7B */
-    --theme-card-hover: 224 228 231; /* #E0E4E7 */
-    --theme-glass: rgba(255, 255, 255, 0.1);
-    --theme-glass-border: rgba(255, 255, 255, 0.2);
+    --theme-bg: 255 255 255; /* #ffffff */
+    --theme-accent: 252 163 17; /* #fca311 */
+    --theme-text-main: 0 0 0; /* #000000 */
+    --theme-text-secondary: 20 33 61; /* #14213d */
+    --theme-card-hover: 229 229 229; /* #e5e5e5 */
+    --theme-glass: rgba(229, 229, 229, 0.8);
+    --theme-glass-border: rgba(252, 163, 17, 0.2);
 
     --radius: 0.5rem;
   }
 
   .dark {
     /* Dark theme colors */
-    --background: 10 25 47; /* #0A192F */
-    --foreground: 204 214 246; /* #CCD6F6 */
-    --primary: 100 255 218; /* #64FFDA */
-    --primary-foreground: 10 25 47;
-    --secondary: 17 34 64; /* #112240 */
-    --secondary-foreground: 204 214 246;
-    --muted: 17 34 64;
-    --muted-foreground: 136 146 176; /* #8892B0 */
-    --accent: 17 34 64;
-    --accent-foreground: 204 214 246;
-    --card: 17 34 64;
-    --card-foreground: 204 214 246;
-    --border: 17 34 64;
-    --input: 17 34 64;
-    --ring: 100 255 218;
+    --background: 20 33 61; /* #14213d */
+    --foreground: 229 229 229; /* #e5e5e5 */
+    --primary: 252 163 17; /* #fca311 */
+    --primary-foreground: 20 33 61;
+    --secondary: 0 0 0; /* #000000 */
+    --secondary-foreground: 229 229 229;
+    --muted: 0 0 0;
+    --muted-foreground: 229 229 229;
+    --accent: 0 0 0;
+    --accent-foreground: 229 229 229;
+    --card: 0 0 0;
+    --card-foreground: 229 229 229;
+    --border: 0 0 0;
+    --input: 0 0 0;
+    --ring: 252 163 17;
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
-    --popover: 17 34 64;
-    --popover-foreground: 204 214 246;
+    --popover: 0 0 0;
+    --popover-foreground: 229 229 229;
     
     /* Custom theme variables */
-    --theme-bg: 10 25 47; /* #0A192F */
-    --theme-accent: 100 255 218; /* #64FFDA */
-    --theme-text-main: 204 214 246; /* #CCD6F6 */
-    --theme-text-secondary: 136 146 176; /* #8892B0 */
-    --theme-card-hover: 17 34 64; /* #112240 */
-    --theme-glass: rgba(17, 34, 64, 0.75);
-    --theme-glass-border: rgba(100, 255, 218, 0.125);
+    --theme-bg: 20 33 61; /* #14213d */
+    --theme-accent: 252 163 17; /* #fca311 */
+    --theme-text-main: 229 229 229; /* #e5e5e5 */
+    --theme-text-secondary: 255 255 255; /* #ffffff */
+    --theme-card-hover: 0 0 0; /* #000000 */
+    --theme-glass: rgba(0, 0, 0, 0.75);
+    --theme-glass-border: rgba(252, 163, 17, 0.125);
   }
 
   * {
