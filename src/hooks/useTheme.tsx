@@ -1,5 +1,6 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
+import { useDynamicColors } from './useDynamicColors';
 
 type Theme = 'dark' | 'light';
 
@@ -22,6 +23,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
     return 'dark';
   });
+
+  // Use dynamic colors from Statsig
+  useDynamicColors(theme);
 
   useEffect(() => {
     const root = window.document.documentElement;
