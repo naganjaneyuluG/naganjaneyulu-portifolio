@@ -1,5 +1,5 @@
 
-import { useDynamicConfig } from 'statsig-react';
+import { useConfig } from 'statsig-react';
 import { useEffect } from 'react';
 
 interface ColorConfig {
@@ -33,7 +33,7 @@ const defaultDarkColors: ColorConfig = {
 };
 
 export const useDynamicColors = (theme: 'light' | 'dark') => {
-  const config = useDynamicConfig('color_scheme_config');
+  const config = useConfig('portifolio');
   
   const getRGBValues = (hex: string) => {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);

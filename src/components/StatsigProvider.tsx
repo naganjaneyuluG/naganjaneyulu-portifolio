@@ -7,15 +7,15 @@ interface StatsigProviderProps {
 }
 
 const StatsigProvider = ({ children }: StatsigProviderProps) => {
-  // You'll need to add your Statsig client key here
-  const statsigClientKey = 'client-your-statsig-key-here';
+  // Get Statsig client key from environment variables
+  const statsigClientKey = import.meta.env.VITE_STATSIG_CLIENT_KEY || 'client-your-statsig-key-here';
   
   return (
     <StatsigReactProvider
       sdkKey={statsigClientKey}
       user={{ userID: 'portfolio-visitor' }}
       options={{
-        environment: { tier: 'production' }
+        environment: { tier: import.meta.env.VITE_ENVIRONMENT || 'production' }
       }}
     >
       {children}
