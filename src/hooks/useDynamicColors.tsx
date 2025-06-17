@@ -46,8 +46,9 @@ export const useDynamicColors = (theme: 'light' | 'dark') => {
     const root = document.documentElement;
     
     // Get colors from Statsig config or use defaults
-    const lightColors = config.light_theme || defaultLightColors;
-    const darkColors = config.dark_theme || defaultDarkColors;
+    const configObj = config as any;
+    const lightColors = configObj.light_theme || defaultLightColors;
+    const darkColors = configObj.dark_theme || defaultDarkColors;
     
     const currentColors = theme === 'light' ? lightColors : darkColors;
     
