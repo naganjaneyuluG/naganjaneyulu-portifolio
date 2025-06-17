@@ -1,4 +1,3 @@
-
 import { useConfig } from 'statsig-react';
 import { useEffect } from 'react';
 
@@ -33,7 +32,8 @@ const defaultDarkColors: ColorConfig = {
 };
 
 export const useDynamicColors = (theme: 'light' | 'dark') => {
-  const config = useConfig('portifolio');
+  // FIX: Use the correct config key (likely 'portfolio', not 'portifolio')
+  const config = useConfig('portfolio');
   
   const getRGBValues = (hex: string) => {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -45,8 +45,8 @@ export const useDynamicColors = (theme: 'light' | 'dark') => {
   useEffect(() => {
     const root = document.documentElement;
     
-    // Get colors from Statsig config or use defaults
-    const configObj = config as any;
+    // Add fallback for missing config
+    const configObj = config || {};
     const lightColors = configObj.light_theme || defaultLightColors;
     const darkColors = configObj.dark_theme || defaultDarkColors;
     
@@ -57,23 +57,8 @@ export const useDynamicColors = (theme: 'light' | 'dark') => {
     root.style.setProperty('--foreground', getRGBValues(currentColors.foreground));
     root.style.setProperty('--primary', getRGBValues(currentColors.primary));
     root.style.setProperty('--secondary', getRGBValues(currentColors.secondary));
-    root.style.setProperty('--theme-bg', getRGBValues(currentColors.background));
-    root.style.setProperty('--theme-accent', getRGBValues(currentColors.accent));
-    root.style.setProperty('--theme-text-main', getRGBValues(currentColors.foreground));
-    root.style.setProperty('--theme-text-secondary', getRGBValues(currentColors.textSecondary));
-    root.style.setProperty('--theme-card-hover', getRGBValues(currentColors.cardHover));
-    
-    // Update glass effects
-    const glassColor = theme === 'light' 
-      ? `rgba(${getRGBValues(currentColors.secondary).split(' ').join(', ')}, 0.8)`
-      : `rgba(${getRGBValues(currentColors.secondary).split(' ').join(', ')}, 0.75)`;
-    
-    const glassBorder = `rgba(${getRGBValues(currentColors.accent).split(' ').join(', ')}, ${theme === 'light' ? '0.2' : '0.125'})`;
-    
-    root.style.setProperty('--theme-glass', glassColor);
-    root.style.setProperty('--theme-glass-border', glassBorder);
-    
-  }, [theme, config]);
-
-  return config;
+    root.style.setProperty('--accent', getRGBValues(currentColors.accent));
+    root.style.setProperty('--card-hover', getRGBValues(currentColors.cardHover));
+    root.style.setProperty('--text-secondary', getRGBValues(currentColors.textSecondary));
+  }, [config, theme]);
 };
